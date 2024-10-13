@@ -40,7 +40,7 @@ def write_fl(nm,cont):
        f.close()
 def make_decoded(name, cd):
     os.chmod(pathlib.Path(name), 0o777)
-    ct = read_normal("image.fwx")
+    ct = read_normal(pathlib.Path(name).stem+".fwx")
     write(pathlib.Path(name).stem+decode(ct,cd)[1],decode(ct,cd)[0])
     os.remove(pathlib.Path(name))
 def make_encoded(name, cd):
